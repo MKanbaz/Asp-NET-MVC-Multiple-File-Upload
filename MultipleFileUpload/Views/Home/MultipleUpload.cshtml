@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "MultipleUpload";
+}
+
+
+    <div class="row">
+        <center><h2>MultipleUpload</h2></center>
+        <div class="col-md-12">
+
+            @using (Html.BeginForm("MultipleUpload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <label>Select Files</label>
+                    @Html.TextBox("files", "", new { @type = "file", @multiple = "multiple" })
+                    <br />
+                    <input type="submit" class="btn btn-success" value="Upload">
+                    <br />
+                    @Html.Raw(ViewBag.State)
+                </div>
+                <div class="col-md-2"></div>
+            }
+
+
+        </div>
+    </div>
